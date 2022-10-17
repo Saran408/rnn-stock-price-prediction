@@ -43,8 +43,8 @@ Plot graph and find the mse value.
 
 ## PROGRAM
 ```python
-# Developed By:LOGHUL M
-# Register Number:212220230029
+# Developed By:SARAN M
+# Register Number:212220230044
 
 
 import numpy as np
@@ -71,7 +71,7 @@ X_train, y_train = np.array(X_train_array), np.array(y_train_array)
 X_train1 = X_train.reshape((X_train.shape[0], X_train.shape[1],1))
 X_train.shape
 model = Sequential()
-model.add(layers.SimpleRNN(50,input_shape=(60,1)))
+model.add(layers.SimpleRNN(80,input_shape=(60,1)))
 model.add(layers.Dense(1))
 model.compile(optimizer='adam', loss='mae')
 model.fit(X_train1,y_train,epochs=100, batch_size=32)
@@ -104,11 +104,12 @@ mse(y_test,predicted_stock_price)
 ```
 ## <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> OUTPUT
 ### True Stock Price, Predicted Stock Price vs time
-![Screenshot (448)](https://user-images.githubusercontent.com/78194419/196045983-1cd68bc9-b34a-446d-b365-dd70a3e0ef88.png)
+![Screenshot (450)](https://user-images.githubusercontent.com/75235427/196089634-c4e3dc3c-82f1-47f4-bcf2-0c0ffd145e06.png)
+
 
 
 ### Mean Square Error
-![Screenshot (447)](https://user-images.githubusercontent.com/78194419/196046000-95e53d6b-cf18-41b0-b6b5-7417b63ae9ae.png)
+![Screenshot (449)](https://user-images.githubusercontent.com/75235427/196089684-94ca0919-3e6f-43ff-8268-fdbc5841fc84.png)
 
 
 

@@ -1,21 +1,23 @@
-### EXP NO: 05
+### EX NO: 05
 
-### .
+### DATE: 16/10/2022 
 
-# <p align = "center"> Stock Price Prediction </p>
+
+# <br/><p align = "center"> Stock Price Prediction </p>
 
 ## AIM
+
 To develop a Recurrent Neural Network model for stock price prediction.
 
-## Problem Statement and Dataset
+## <br/><br/><br/>Problem Statement and Dataset
 We are developing the RNN model to predict the stock prices of Google using the dataset provided. The dataset has many features, but we will be predicting the "Open" feauture alone. We will be using a sequence of 60 readings to predict the 61st reading.we have taken 70 Inputs with 70 Neurons in the RNN Layer (hidden) and one neuron for the Output Layer.These parameters can be changed as per requirements.
 
-## <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Neural Network Model
+## <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Neural Network Model
 
-![12](https://user-images.githubusercontent.com/78194419/196045787-3a444413-6c18-4eaf-b438-02a9f8ecbf7d.jpeg)
+![IMG](https://user-images.githubusercontent.com/75235789/196047646-f8e900d5-ad03-4188-8fd0-6753f7180513.jpeg)
 
 
-## DESIGN STEPS
+## <br/><br/><br/><br/><br/>DESIGN STEPS
 
 ### STEP 1:
 Import tensorflow library and preprocessing libraries.
@@ -40,11 +42,11 @@ Plot graph and find the mse value.
 
 
 
-
 ## PROGRAM
+
 ```python
-# Developed By:SARAN M
-# Register Number:212220230044
+# Developed By: SARAN M
+# Register Number: 212220230044
 
 
 import numpy as np
@@ -71,11 +73,11 @@ X_train, y_train = np.array(X_train_array), np.array(y_train_array)
 X_train1 = X_train.reshape((X_train.shape[0], X_train.shape[1],1))
 X_train.shape
 model = Sequential()
-model.add(layers.SimpleRNN(80,input_shape=(60,1)))
+model.add(layers.SimpleRNN(70,input_shape=(80,1)))
 model.add(layers.Dense(1))
 model.compile(optimizer='adam', loss='mae')
 model.fit(X_train1,y_train,epochs=100, batch_size=32)
-dataset_test = pd.read_csv('testset (1).csv')
+dataset_test = pd.read_csv('testset.csv')
 test_set = dataset_test.iloc[:,1:2].values
 test_set.shape
 dataset_total = pd.concat((dataset_train['Open'],dataset_test['Open']),axis=0)
@@ -102,17 +104,18 @@ plt.show()
 from sklearn.metrics import mean_squared_error as mse
 mse(y_test,predicted_stock_price)
 ```
-## <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> OUTPUT
+
+## OUTPUT
+
 ### True Stock Price, Predicted Stock Price vs time
-![Screenshot (450)](https://user-images.githubusercontent.com/75235427/196089634-c4e3dc3c-82f1-47f4-bcf2-0c0ffd145e06.png)
 
-
+![Screenshot 2022-10-16 214219](https://user-images.githubusercontent.com/75235789/196046322-5674a4a9-9ae9-4a3d-8232-264e98b4e867.jpg)
 
 ### Mean Square Error
-![Screenshot (449)](https://user-images.githubusercontent.com/75235427/196089684-94ca0919-3e6f-43ff-8268-fdbc5841fc84.png)
+
+![Screenshot 2022-10-16 214256](https://user-images.githubusercontent.com/75235789/196046327-e9b1c68e-632c-4864-8dbd-710f0cc1c838.jpg)
 
 
+## RESULT
 
-
-## <br><br><br><br>RESULT
 Thus, a Recurrent Neural Network model for stock price prediction is developed.
